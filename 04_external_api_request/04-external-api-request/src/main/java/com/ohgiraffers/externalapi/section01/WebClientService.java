@@ -1,5 +1,9 @@
 package com.ohgiraffers.externalapi.section01;
 
+import com.ohgiraffers.externalapi.section01.DTO.RequestDTO;
+import com.ohgiraffers.externalapi.section01.DTO.ResponseDTO;
+import com.ohgiraffers.externalapi.section01.DTO.WebRequestDTO;
+import com.ohgiraffers.externalapi.section01.DTO.WebResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -46,4 +50,20 @@ public class WebClientService {
                 // 오류 발생시 처리할 작업 (로깅 및 예외처리에 사용한다.)
                 .block();  // 비동기 작업을 동기식으로 변환, 결과가 반환될 때까지 대기
     }
+
+    public WebResponseDTO textToImage(WebRequestDTO webRequestDTO) {
+        WebResponseDTO webResponseDTO = webClient.post()
+                .uri("/textToImage")
+                .bodyValue(webRequestDTO)
+                .retrieve() // 요청 보내기
+                .bodyToMono(WebResponseDTO.class) // 응답 받을 값을 변환
+                .doOnSuccess(webResponse -> log.info("번역완료 "))
+                .doOnError(error -> log.error("번역 API 호출 중 에러발생 삐욧ㅇㅂ삐용"))
+                .block(); // 비동기 작업을 동기식으로 반환
+
+        return webResponseDTO;
+
+    }
+
+
 }

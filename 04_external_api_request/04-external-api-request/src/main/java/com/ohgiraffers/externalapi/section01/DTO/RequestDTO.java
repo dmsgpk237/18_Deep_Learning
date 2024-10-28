@@ -1,4 +1,4 @@
-package com.ohgiraffers.externalapi.section01;
+package com.ohgiraffers.externalapi.section01.DTO;
 
 import lombok.*;
 

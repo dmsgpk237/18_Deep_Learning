@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api-request.main.iml" filepath="$PROJECT_DIR$/.idea/modules/api-request.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/04_external_api_request.iml" filepath="$PROJECT_DIR$/.idea/04_external_api_request.iml" />
     </modules>
   </component>
 </project>

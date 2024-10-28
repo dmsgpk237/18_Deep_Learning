@@ -1,5 +1,9 @@
 package com.ohgiraffers.externalapi.section01;
 
+import com.ohgiraffers.externalapi.section01.DTO.RequestDTO;
+import com.ohgiraffers.externalapi.section01.DTO.ResponseDTO;
+import com.ohgiraffers.externalapi.section01.DTO.WebRequestDTO;
+import com.ohgiraffers.externalapi.section01.DTO.WebResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -54,6 +58,18 @@ public class TranslationController {
         log.info("text: {}, lang: {}", requestDTO.getText(), requestDTO.getLang());
 
         ResponseDTO result = webClientService.translateText(requestDTO);
+
+        return result;
+    }
+
+    @PostMapping("/textToImage")
+    public WebResponseDTO textToImageByWebClient(@RequestBody WebRequestDTO webRequestDTO) {
+
+        log.info("텍스트 이미지로 변경[WebClient] Controller 요청 들어옴...");
+        log.info("text : {}", webRequestDTO.getText());
+
+
+        WebResponseDTO result = webClientService.textToImage(webRequestDTO);
 
         return result;
     }

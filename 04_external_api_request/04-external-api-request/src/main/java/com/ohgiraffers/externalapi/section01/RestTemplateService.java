@@ -1,5 +1,7 @@
 package com.ohgiraffers.externalapi.section01;
 
+import com.ohgiraffers.externalapi.section01.DTO.RequestDTO;
+import com.ohgiraffers.externalapi.section01.DTO.ResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
