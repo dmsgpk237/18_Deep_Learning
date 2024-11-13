@@ -4,6 +4,5 @@
     1. Shakker-Labs/FLUX.1-dev-LoRA-One-Click-Creative-Template
     2. black-forest-labs/FLUX.1-schnell
     3. Shakker-Labs/SD3.5-LoRA-Chinese-Line-Art
-    4. 
 3. **task 별 모델들을 가져와 적합한 모델찾기**
     1. black-forest-labs/FLUX.1-schnell
